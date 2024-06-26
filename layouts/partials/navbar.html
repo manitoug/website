@@ -1,0 +1,57 @@
+<nav class="navbar is-primary" id="mainbar">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      const navbar = document.getElementById(mainbar)
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+      $navbar.addEventListener('click', () => {
+        $navbar.classList.toggle('is-fixed-bottom')
+
+      })
+    });
+  </script>
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/" id="site-title">
+      {{ $.Site.Title }}
+    </a>
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu" id="navMenu">
+    <div class="navbar-start">
+      {{range .Site.Sections.Reverse}}
+      <a class="navbar-item" href="{{.RelPermalink}}" title="{{.Params.summary}}">
+        {{ if .Params.fontawesome }}
+        <i class="{{ .Params.fontawesome }}" style="padding: 6px"></i>
+        {{end}}
+        {{.LinkTitle}}
+      </a>
+      {{end}}
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <a id="external-link" class="button is-primary" target="_blank" title="Corporate Talk 🤖 @ LinkedIn" href="https://www.linkedin.com/in/mathieu-gardette/">
+            <i class="fa-brands fa-linkedin"></i>&nbsp;LinkedIn
+          </a>
+          <a id="external-link" class="button is-primary" target="_blank" title="Cool Projects 😎 @ GitHub" href="https://github.com/manitoug">
+            <i class="fa-brands fa-github"></i>&nbsp;GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,4 @@
+{{range .Params.tags}}
+    {{- $url := printf "tags/%s" (. | urlize | lower) -}}
+    <a href={{$url}} class="level-item tag">#{{.}}</a>
+{{end}}

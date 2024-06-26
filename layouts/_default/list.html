@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="section">
+  <main class="container">
+    <div class="pb-6">
+    {{partial "section.html" .}}
+    </div>
+    <div id="section-list">
+      {{ range .Pages }}
+      <div class="py-3">
+        {{ .Render "summary" }}
+      </div>
+      {{ end }}
+    </div>
+    </div>
+  </main>
+</section>
+{{ end }}

@@ -1,0 +1,32 @@
+:root {
+
+  --bulma-primary: #0f0f0f;
+
+  body {
+    background-color: ghostwhite;
+
+    a#site-title {
+      color: white;
+      font-family: 'Lato';
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--bulma-text);
+      cursor: pointer;
+    }
+
+    a.navbar-item:hover{
+      color: white;
+    }
+
+    a#external-link:hover{
+      color:white;
+      cursor: alias;
+    }
+
+    a:hover {
+      color: var(--bulma-primary);
+    }
+  }
+}

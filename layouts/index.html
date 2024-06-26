@@ -1,0 +1,26 @@
+{{define "main"}}
+<section class="section pb-2 mx-6" id="presentation">
+    <main class="container">
+        <h1 class="title is-2">Welcome to my Website 👋 </h1>
+        {{partial "bio" .}}
+    </main>
+</section>
+<section class="section pb-2 mx-6">
+    <main class="container">
+        <h1 class="title is-2">Latest Articles</h1>
+        {{ range .Site.Sections.Reverse }}
+        <div class="pb-6">
+            {{partial "section.html" .}}
+            <hr>
+            <div class="columns is-desktop">
+                {{ range first 3 .Pages}}
+                <div class="column  is-one-third">
+                    {{ .Render "summary"}}
+                </div>
+                {{end}}
+            </div>
+        </div>
+        {{ end }}
+    </main>
+</section>
+{{end}}

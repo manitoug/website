@@ -1,0 +1,16 @@
+<div id="metadata" class="is-multiline">
+    <div class="columns pl-3 py-2">
+        <nav class="level column is-4">
+            <time class="level-item" datetime='{{ .Date.Format "2-01-2006" }}'>{{ .Date.Format "2 January 2006"
+                }}</time>
+            <span class="level-item tag is-primary is-light">{{ .WordCount }} Words</span>
+            <span class="level-item tag is-primary">{{ .ReadingTime }} Minute·s</span>
+        </nav>
+    </div>
+    <nav class="tags pb-2">
+        {{range .Params.tags}}
+        {{- $url := printf "tags/%s" (. | urlize | lower) -}}
+        <a href={{$url}} class=" tag">#{{.}}</a>
+        {{end}}
+    </nav>
+</div>

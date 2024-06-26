@@ -1,0 +1,14 @@
+<article>
+  <a href="{{ .Permalink }}">
+    <div class="card flex is-flex-direction-column">
+      <div class="card-content content is-justify-content-flex-start">
+        <h4 class="title is-4">{{ .LinkTitle }}</h4>
+        <p class="summary has-text-grey is-6 ">{{ .Summary }}</p>
+        <br>
+      </div>
+      <div class="card-footer">
+        {{partial "metadata" .}}
+      </div>
+    </div>
+  </a>
+</article>

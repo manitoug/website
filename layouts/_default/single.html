@@ -1,0 +1,26 @@
+{{define "main"}}
+<section class="section">
+    <main class="container">
+        <section class="section">
+            <div>
+                <h1 class="title">{{.LinkTitle}}</h1>
+                <hr>
+                    {{ partial "metadata" .}}
+            </div>
+            <br>
+            <article class="content">
+                {{.Content}}
+            </article>
+        </section>
+    </main>
+
+    <nav class="pagination">
+        {{ with .PrevInSection }}
+        <a class="pagination-previous" href="{{ .Permalink }}"><i alt=⏪ class="fa-solid fa-chevron-left"></i>&nbsp;{{.LinkTitle}}</a>
+        {{ end }}
+        {{ with .NextInSection }}
+        <a class="pagination-next" href="{{ .Permalink }}">{{.LinkTitle}}&nbsp;<i alt=⏩ class="fa-solid fa-chevron-right"></i></a>
+        {{ end }}
+        </div>
+</section>
+{{ end }}
