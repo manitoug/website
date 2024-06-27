@@ -37,6 +37,8 @@
         cursor: pointer;
       }
 
+
+
     }
 
     [data-theme=light],
@@ -107,6 +109,10 @@
 
       a:hover {
         color: var(--bulma-primary);
+      }
+
+      span#burger-id {
+        color: white;
       }
     }
   }
