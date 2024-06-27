@@ -1,32 +1,113 @@
-:root {
+@import "bulma.min.css";
+@import "fonts.css";
 
-  --bulma-primary: #0f0f0f;
+@media (prefers-color-scheme: dark) {
+  :root {
 
-  body {
-    background-color: ghostwhite;
+    [data-theme=dark],
+    .theme-dark {
+      --bulma-primary-h: 220deg;
+      --bulma-primary-s: 83%;
+      --bulma-primary-l: 75%;
+      --bulma-link-h: 267deg;
+      --bulma-link-s: 83%;
+      --bulma-link-l: 80%;
+      --bulma-info-h: 40deg;
+      --bulma-info-s: 70%;
+      --bulma-info-l: 78%;
+      --bulma-success-h: 171deg;
+      --bulma-success-s: 47%;
+      --bulma-success-l: 69%;
+      --bulma-warning-h: 21deg;
+      --bulma-warning-s: 86%;
+      --bulma-warning-l: 73%;
+      --bulma-danger-h: 351deg;
+      --bulma-danger-s: 74%;
+      --bulma-danger-l: 73%;
+      --background-color: #24273a;
+      /* Surface 1  */
+      --card-color: #363a4f;
+      --bulma-text: #cad3f5;
+      --ext-link: black;
+      --ext-link-shaded: rgb(48, 48, 48);
+      --bulma-navbar-background-color: hsl(0deg 100% 41% / 0%);
 
-    a#site-title {
-      color: white;
-      font-family: 'Lato';
-      font-weight: 700;
+      a {
+        color: var(--bulma-text-light);
+        cursor: pointer;
+      }
+
     }
 
-    a {
-      color: var(--bulma-text);
-      cursor: pointer;
+    [data-theme=light],
+    .theme-light {
+      --bulma-primary-h: 220deg;
+      --bulma-primary-s: 91%;
+      --bulma-primary-l: 54%;
+      --bulma-link-h: 266deg;
+      --bulma-link-s: 85%;
+      --bulma-link-l: 58%;
+      --bulma-info-h: 35deg;
+      --bulma-info-s: 77%;
+      --bulma-info-l: 49%;
+      --bulma-success-h: 183deg;
+      --bulma-success-s: 74%;
+      --bulma-success-l: 35%;
+      --bulma-warning-h: 22deg;
+      --bulma-warning-s: 99%;
+      --bulma-warning-l: 52%;
+      --bulma-danger-h: 347deg;
+      --bulma-danger-s: 87%;
+      --bulma-danger-l: 44%;
+      --background-color: #eff1f5;
+      --bulma-text: #4c4f69;
+      --ext-link: white;
+      --ext-link-shaded: whitesmoke;
+      /* Surface 1 */
+      --card-color: #ccd0da;
+      --bulma-navbar-background-color: hsl(0deg 100% 41% / 0%);
+
+      a {
+        color: var(--bulma-text-dark);
+        cursor: pointer;
+      }
+
     }
 
-    a.navbar-item:hover{
-      color: white;
-    }
+    body {
+      background-color: var(--background-color);
 
-    a#external-link:hover{
-      color:white;
-      cursor: alias;
-    }
+      .navbar {
+        background-color: hsl(0deg 100% 41% / 0%);
+      }
 
-    a:hover {
-      color: var(--bulma-primary);
+      .card {
+        background-color: var(--card-color);
+      }
+
+      a#site-title {
+        color: var(--bulma-text-bold);
+        font-family: 'Lato';
+        font-weight: 700;
+      }
+
+      a.navbar-item:hover {
+        color: white;
+      }
+
+      a#external-link:hover {
+        color: var(--ext-link-shaded);
+        cursor: alias;
+      }
+
+      a#external-link {
+        color: var(--ext-link);
+        cursor: alias;
+      }
+
+      a:hover {
+        color: var(--bulma-primary);
+      }
     }
   }
 }
